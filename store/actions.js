@@ -133,7 +133,7 @@ export default {
 			row.lines = (row.lines || '').split('\n')
 		})
 		commit('setData', {
-			baseHost: host.replace(/^(en|kr)\./, ''),
+			baseHost: host.replace(/^(en|kr|www)\./, ''),
 			route,
 			lang,
 			navList,
