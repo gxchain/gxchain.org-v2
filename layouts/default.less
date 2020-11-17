@@ -1,0 +1,143 @@
+@color1: #6699FF;
+.color-3 { color: #9343FF; }
+.bg-1 {
+	background: @color1;
+}
+
+body {
+	background: #fff;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.nuxt-progress {
+	display: none;
+}
+@font-face {
+	font-family: 'fjalla';
+	src: url('/fjalla.otf');
+}
+.f-num {
+	font-family: fjalla;
+}
+.main {
+	padding-top: 60px;
+	// font-family: "Arial";
+}
+table {
+	width: 100%;
+	font-size: 13px;
+	border: 1px solid #888;
+	border-left: none;
+	border-top: none;
+	border-spacing: 0;
+	td {
+		padding: 8px;
+		border: 1px solid #888;
+		border-right: none;
+		border-bottom: none;
+	}
+}
+table.td-m80 {
+	td {
+		min-width: 80px;
+	}
+}
+.bdb-1 {
+	border-bottom: 1px solid #e8e8e8;
+}
+.bdb-1-light {
+	border-bottom: 1px solid #f0f0f0;
+}
+.panel-1 {
+	// margin: 20px 0;
+	padding: 80px 30px;
+	// background: #fff;
+	position: relative;
+	&.dark {
+		background: #444;
+		color: #f5f5f5;
+	}
+	h2 {
+		// text-align: center;
+		font-size: 26px;
+		position: relative;
+		border-left: 4px solid @color1;
+		line-height: 1;
+		padding-left: 8px;
+	}
+	.wrap {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	&.bg-l1 {
+		// background: linear-gradient(45deg, #f2fdf1, #c9eeff);
+		background: #ECEFF4;
+	}
+}
+.bg-l3 {
+	background: url(https://aoyi02.oss-cn-shanghai.aliyuncs.com/app/17/bg3-3.png) no-repeat;
+	background-size: 100%;
+}
+.bg-l2 {
+	background-color: #f9f9f9;
+}
+
+.bg-w1 {
+	background: #23213e url(https://aoyi02.oss-cn-shanghai.aliyuncs.com/app/17/bg2-3.png) no-repeat;
+	background-size: 100%;
+	h2 {
+		color: white;
+	}
+	color: rgba(255, 255, 255, .8);
+}
+.pd-h50 {
+	padding: 50px 0;
+}
+.intro-img1 {
+	height: 45px;
+}
+.bg-f7 {
+	background: #f7f7f7;
+}
+.bg-f7-2 {
+	background: #f7f8fa;
+}
+.bg-d3 {
+	background: #333;
+}
+.dark {
+	background: #333;
+	.panel-1 {
+		margin: 20px 0;
+	}
+	.bdb-1 {
+		border-bottom: 1px solid #888;
+	}
+	.bdb-1-light {
+		border-bottom: 1px solid #666;
+	}
+	.bg-white, .panel-1 {
+		background: #333;
+		color: #999;
+	}
+	.gray-a, .gray-3, a {
+		color: #666;
+	}
+	a:hover, .color-1 {
+		color: @color1;
+	}
+}
+@media screen and (max-width: 992px) {
+	.panel-1 {
+		padding: 60px 30px 40px;
+	}
+	table {
+		font-size: 12px;
+	}
+	.mt-50 {
+		margin-top: 40px;
+	}
+	.lh-2 {
+		line-height: 1.8;
+	}
+}

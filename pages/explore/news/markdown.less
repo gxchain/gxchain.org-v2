@@ -1,0 +1,205 @@
+.markdown {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4rem;
+    text-align: justify;
+    word-break: break-word
+}
+
+.markdown>:first-child {
+    margin-top: 0
+}
+
+.markdown h1,.markdown h2,.markdown h3,.markdown h4,.markdown h5,.markdown h6 {
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    margin-top: .4rem
+}
+
+.markdown h1+hr,.markdown h2+hr,.markdown h3+hr,.markdown h4+hr,.markdown h5+hr,.markdown h6+hr {
+    margin-top: -.4rem
+}
+
+.markdown h1 {
+    font-size: 28px
+}
+
+.markdown h2 {
+    font-size: 24px
+}
+
+.markdown h3 {
+    font-size: 22px
+}
+
+.markdown h4 {
+    font-size: 20px
+}
+
+.markdown h5 {
+    font-size: 18px
+}
+
+.markdown h6 {
+    font-size: 16px
+}
+
+.markdown p {
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    margin: 0 0 1.6rem
+}
+
+.markdown p:first-child img {
+    margin-top: 0
+}
+
+.markdown a {
+    border-bottom: .05rem solid #efefef;
+    color: #0056ff;
+    font-weight: 500;
+    padding-bottom: .1rem
+}
+
+.markdown a:active,.markdown a:focus,.markdown a:hover {
+    border-color: #333;
+    color: #333;
+    text-decoration: none
+}
+
+.markdown a,.markdown ins,.markdown u {
+    -webkit-text-decoration-skip: ink edges;
+    text-decoration-skip: ink edges
+}
+
+.markdown del+del,.markdown del+s,.markdown ins+ins,.markdown ins+u,.markdown s+del,.markdown s+s,.markdown u+ins,.markdown u+u {
+    margin-left: .125em
+}
+
+.markdown hr {
+    background: #efefef;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: .4rem 0 1.2rem;
+    overflow: hidden
+}
+
+.markdown hr::after {
+    clear: both;
+    content: "";
+    display: table
+}
+
+.markdown ol,.markdown ul {
+    margin: 1.6rem 0 1.6rem 1.6rem;
+    padding: 0
+}
+
+.markdown ol ol,.markdown ol ul,.markdown ul ol,.markdown ul ul {
+    margin: .8rem 0 .8rem 1.6rem
+}
+
+.markdown ol li,.markdown ul li {
+    margin-top: .4rem
+}
+
+.markdown ol li>p,.markdown ul li>p {
+    display: inline
+}
+
+.markdown ul {
+    list-style: disc inside
+}
+
+.markdown ul ul {
+    list-style-type: circle
+}
+
+.markdown ul>li>ul>li>ul {
+    display: none
+}
+
+.markdown ol {
+    list-style: decimal inside
+}
+
+.markdown ol ol {
+    list-style-type: lower-alpha
+}
+
+.markdown img {
+    border: 0;
+    display: block;
+    height: auto;
+    margin: 1rem auto;
+    max-width: 100%
+}
+
+.markdown img+em {
+    color: #737373;
+    display: inline-block;
+    font-size: .7rem;
+    text-align: center;
+    width: 100%
+}
+
+.markdown blockquote {
+    background: #fafafa;
+    border-color: #e6e5e5;
+    margin: 1.6rem 0;
+    padding: 1.2rem
+}
+
+.markdown blockquote p:last-child {
+    margin-bottom: 0
+}
+
+.markdown table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    font-size: .7rem;
+    margin: 1.6rem 0;
+    overflow-x: auto;
+    padding-bottom: .75rem;
+    text-align: left;
+    white-space: nowrap;
+    width: 100%
+}
+
+.markdown table tbody tr:nth-of-type(odd) {
+    background: #fafafa
+}
+
+.markdown table td,.markdown table th {
+    border-bottom: 1px solid #333;
+    padding: .8rem;
+    width: 20%
+}
+
+.markdown table th {
+    border-bottom-width: 2px
+}
+
+.markdown code {
+    background: #fafafa;
+    color: #d73e48;
+    font-family: "SF Mono","Segoe UI Mono","Roboto Mono",Menlo,Courier,monospace;
+    font-size: .9em;
+    padding: .2em
+}
+
+.markdown pre {
+    background: #fafafa;
+    margin: 1.6rem 0;
+    overflow-x: auto;
+    padding: .4rem .8rem
+}
+
+.markdown .codehilite {
+    font-size: .9em;
+    line-height: 1.8
+}

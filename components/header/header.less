@@ -1,0 +1,138 @@
+.gxb-header {
+	padding: 0 45px;
+	height: 60px;
+	// border-bottom: 1px solid #f2f2f2;
+	z-index: 1000;
+	
+	h1 {
+		font-weight: 500;
+	}
+}
+.page_ {
+	.gxb-header {
+		background: #1d169a;
+		color: white;
+		
+		// border-bottom: none;
+		.close-menu span {
+			&::after, &::before {
+				background: rgba(255, 255, 255, .6);
+			}
+		}
+	}
+	&.banner_bg .gxb-header {
+		background: transparent;
+	}
+	.main {
+		padding-top: 0;
+	}
+}
+li { list-style: none; }
+.top-nav {
+	li a {
+		display: inline-block;
+		padding: 7px 10px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.page_, .bg_dark {
+		.top-nav {
+			background: transparent;
+			&>li>a {
+				color: rgba(255, 255, 255, .8);
+				&.color-1 {
+					color: rgba(255, 255, 255, .85);
+				}
+			}
+		}
+	}
+	.gxb-header {
+		border-bottom: none;
+	}
+	.sub-list {
+		display: none;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 30px;
+		padding: 8px 0;
+		text-align: center;
+		width: max-content;
+		min-width: 100px;
+		box-shadow: 0 1px 1px #ddd;
+	}
+	li:hover .sub-list {
+		display: block;
+	}
+	.dark {
+		.sub-list {
+			box-shadow: 0 1px 2px #444;
+		}
+	}
+	.lang-wrap {
+		a.lang-a {
+			margin: 0 3px;
+			padding: 2px 3px;
+			&.active {
+				background: #2e27a5;
+				color: #fff;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 992px) {
+	.gxb-header {
+		padding: 0 30px;
+	}
+	.dark {
+		.gxb-header, .top-nav.show {
+			border-color: #666;
+		}
+	}
+	.hide-nav {
+		display: flex;
+	}
+	.top-nav {
+		display: none;
+		font-weight: 500;
+		li a {
+			padding: 10px;
+		}
+		.sub-list {
+			margin-left: 20px;
+			font-weight: normal;
+			li a {
+				color: #666;
+				padding: 5px 10px;
+				font-size: 12px;
+			}
+		}
+	}
+	.nav-bg-mask {
+		top: 60px;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, .05);
+	}
+	.lang-wrap {
+		margin-right: 15px;
+		margin-top: 5px;
+		
+	}
+	.top-nav.show {
+		display: block;
+		position: fixed;
+		right: 0;
+		top: 59px;
+		background: #fff;
+		z-index: 1000;
+		padding: 10px;
+		border: 1px solid #f2f2f2;
+		border-top: none;
+		border-right: none;
+		li a {
+			display: block;
+		}
+	}
+}

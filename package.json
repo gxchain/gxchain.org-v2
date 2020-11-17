@@ -1,0 +1,31 @@
+{
+  "name": "gxb-www",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "PORT=3002 nuxt start",
+    "generate": "nuxt generate",
+    "p": "git push && bash deploy/p.sh",
+    "p2": "git push && bash deploy/p2.sh"
+  },
+  "dependencies": {
+    "@better-scroll/mouse-wheel": "^2.0.4",
+    "@nuxtjs/axios": "^5.12.0",
+    "axios-extensions": "^3.1.3",
+    "countup.js": "^2.0.7",
+    "echarts": "^4.9.0",
+    "nuxt": "^2.14.0",
+    "swiper": "^6.2.0",
+    "v-charts": "^1.19.0",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "devDependencies": {
+    "archiver": "^5.0.0",
+    "less": "^3.12.2",
+    "less-loader": "^6.2.0",
+    "ora": "^5.0.0",
+    "shelljs": "^0.8.4"
+  }
+}
