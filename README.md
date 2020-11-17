@@ -1,4 +1,6 @@
-# gxchain-www
+# gxchain.org v2
+
+Website v2.0 for [gxchain.org](https://gxchain.org)
 
 ## Build Setup
 
