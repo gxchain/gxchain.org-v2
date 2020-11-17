@@ -19,7 +19,7 @@
 		<title-1 :title="docInfo.title" more="更多项目" link="/developer"></title-1>
 	</docs-1>
 	
-	<partner-1 class="bg-f7-2" :info="partnerInfo" is-home>
+	<partner-1 class="bg-f7-2" :info="partnerInfo">
 		<title-1 :title="partnerInfo.title" more="查看更多" link="/eco"></title-1>
 	</partner-1>
 	
