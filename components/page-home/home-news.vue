@@ -31,7 +31,7 @@
 <template>
 <div class="panel-1 home-news">
 	<div class="wrap">
-		<title-1 :title="isCh ? '新闻动态' : 'News'" more="发现更多" link="/explore"></title-1>
+		<title-1 :title="title" more="发现更多" link="/explore"></title-1>
 		<el-row class="mt-50" :gutter="isMobile ? 20 : 30">
 			<el-col :xs="12" :sm="12" :md="6" v-for="(item, i) in list" :key="i">
 				<a :href="'/explore/news/'+item.id" class="item">
@@ -52,8 +52,12 @@ export default {
 		list: Array,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
+		},
+		title() {
+			if(this.lang == 'kr') return '뉴스'
+			return this.lang == 'ch' ? '新闻动态' : 'News'
 		},
 		isMobile() {
 			return this.$store.state.clientWidth < 650

@@ -34,7 +34,7 @@
 						<a class="op-touch" :href="info.link" target="_blank">
 							<img :src="info.icon" class="img w100p ">
 							<p class="mt-20">
-								<u class="white">{{ title }}</u>
+								<u class="white">{{ paperTitle }}</u>
 							</p>
 						</a>
 					</div>
@@ -48,8 +48,8 @@
 <script>
 export default {
 	props: {
-		title: String,
 		info: Object,
+		paperTitle: String,
 	},
 	computed: {
 		lang() {

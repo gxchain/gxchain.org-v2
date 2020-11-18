@@ -46,7 +46,7 @@
 <block-1 :info="info" class="ov-h" is-right>
 	<div class="title">
 		<span class="fz-30">{{ info.title }}</span>
-		<a href="/institution">{{ isCh ? '了解更多' : 'More' }}</a>
+		<a href="/institution">{{ moreTxt }}</a>
 	</div>
 	<template #right>
 		<!-- <img :src="info.icon" class=" ml-20 gov-icon-1 ev-n"> -->
@@ -63,11 +63,15 @@ export default {
 		info: Object,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
 		},
 		trustNodes() {
 			return this.$store.state.configMap.trustNodes
+		},
+		moreTxt() {
+			if(this.lang == 'kr') return '더 보기'
+			return this.lang == 'ch' ? '了解更多' : 'More'
 		},
 	}
 }

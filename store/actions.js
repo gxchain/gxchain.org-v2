@@ -42,12 +42,12 @@ export default {
 		commit('setData', params)
 	},
 	async getNews({ commit, state }, opts = {}) {
-		let { newsPage, newsList } = state
+		let { lang, newsPage, newsList } = state
 		if(opts.more) newsPage += 1
 		else if(opts.page) newsPage = opts.page
 		else newsPage = 1
 		const body = {
-			// lang,
+			lang,
 			type: 'report',
 			_page: newsPage,
 			_limit: 10,

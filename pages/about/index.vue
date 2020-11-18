@@ -10,9 +10,9 @@ body {
 </style>
 <template>
 <div>
-	<about-intro :info="blockInfo" :title="isCh ? '获取GXChain白皮书' : 'GXChain Whitepaper'"></about-intro>
+	<about-intro :info="blockInfo" :paper-title="isCh ? '获取GXChain白皮书' : 'GXChain Whitepaper'"></about-intro>
 	<about-advan :list="advanList"></about-advan>
-	<about-roadmap :title="isCh ? '历程' : 'RoadMap'" :list="roadMapList"></about-roadmap>
+	<about-roadmap :list="roadMapList"></about-roadmap>
 </div>
 </template>
 

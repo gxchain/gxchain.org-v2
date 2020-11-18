@@ -21,7 +21,7 @@
 <div class="title">
 	<h2>{{ title }}</h2>
 	<a :href="link" class="d-flex al-c">
-		<span>{{ isCh ? more: 'More' }}</span>
+		<span>{{ moreTxt }}</span>
 		<img src="/right-arrow.svg" class="icon d-b">
 	</a>
 </div>
@@ -35,8 +35,12 @@ export default {
 		link: String,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
+		},
+		moreTxt() {
+			if(this.lang == 'kr') return '더 보기'
+			return this.lang == 'ch' ? this.more: 'More'
 		},
 	},
 }

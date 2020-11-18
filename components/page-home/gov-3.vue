@@ -24,7 +24,7 @@
 	<template #main>
 		<div class="d-flex mt-20">
 			<a href="/institution" class="d-flex al-c fz-13 color-3 ml-auto">
-				<span>{{ isCh ? '了解更多' : 'More' }}</span>
+				<span>{{ moreTxt }}</span>
 				<img src="/right-arrow.svg" class="icon" style="height: 12px; margin-left: 3px;">
 			</a>
 		</div>
@@ -43,8 +43,12 @@ export default {
 		info: Object,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
+		},
+		moreTxt() {
+			if(this.lang == 'kr') return '더 보기'
+			return this.lang == 'ch' ? '了解更多' : 'More'
 		},
 		trustNodes() {
 			return this.$store.state.configMap.trustNodes

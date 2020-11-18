@@ -93,7 +93,7 @@
 <template>
 <div class="explore-news panel-1">
 	<div class="wrap">
-		<a :href="'/explore/news/'+lastNews.id" class="last-news" v-if="lastNews && !query.s">
+		<a :href="'/explore/news/'+lastNews.id" target="_blank" class="last-news" v-if="lastNews && !query.s">
 			<el-row :gutter="40" type="flex" align="middle">
 				<el-col :xs="24" :sm="16">
 					<div class="w100p img">
@@ -127,7 +127,7 @@
 				<div class="news-list">
 					<el-row :gutter="30">
 						<el-col :span="12" v-for="(item, i) in list" :key="i">
-							<a :href="'/explore/news/'+item.id">
+							<a :href="'/explore/news/'+item.id" target="_blank">
 								<div class="item">
 									<div class="w100p img">
 										<img :src="item.img || defImg" class="w100p d-b trans-300">
