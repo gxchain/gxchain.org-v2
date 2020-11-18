@@ -1,7 +1,7 @@
 export default [
 	{
 		icon: 'icon-weixin',
-		popImg: '/img/qrcode.38089dc.png',
+		popImg: '//gxchain.oss-cn-shanghai.aliyuncs.com/org/img/38089dc9f5ea3365d73b5c614bfdf673.png',
 	},
 	{
 		icon: 'icon-github',

@@ -25,7 +25,7 @@
 		<div class="d-flex mt-20">
 			<a href="/institution" class="d-flex al-c fz-13 color-3 ml-auto">
 				<span>{{ moreTxt }}</span>
-				<img src="/right-arrow.svg" class="icon" style="height: 12px; margin-left: 3px;">
+				<img src="/icon/right-arrow.svg" class="icon" style="height: 12px; margin-left: 3px;">
 			</a>
 		</div>
 	</template>

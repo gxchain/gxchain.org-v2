@@ -43,7 +43,7 @@
 	<div class="wrap">
 		<h2>{{ title }}</h2>
 		<div class="mt-50">
-			<img src="//aoyi02.oss-cn-shanghai.aliyuncs.com/app/17/2aadafb018fc407a5a46433162a57f61.png" class="map-img d-b">
+			<img src="//gxchain.oss-cn-shanghai.aliyuncs.com/org/img/2aadafb018fc407a5a46433162a57f61.png" class="map-img d-b">
 			<div class="list d-flex flex-center flex-wrap">
 				<div class="item d-flex al-c" v-for="(item, i) in list" :key="i">
 					<img :src="item.logo" class="icon op-touch" @click="onClick(item)">

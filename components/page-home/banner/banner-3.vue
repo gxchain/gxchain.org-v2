@@ -3,7 +3,7 @@
 	background: linear-gradient(180deg, #08035b, #1d169a);
 	.panel-1 {
 		background: none;
-		background: url(/bg-net.svg) no-repeat;
+		background: url(/bg/bg-net.svg) no-repeat;
 		background-size: 100%;
 		background-position: center 0%;
 		padding-top: 80px!important;

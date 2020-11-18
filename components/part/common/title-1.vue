@@ -22,7 +22,7 @@
 	<h2>{{ title }}</h2>
 	<a :href="link" class="d-flex al-c">
 		<span>{{ moreTxt }}</span>
-		<img src="/right-arrow.svg" class="icon d-b">
+		<img src="/icon/right-arrow.svg" class="icon d-b">
 	</a>
 </div>
 </template>
