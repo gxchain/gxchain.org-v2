@@ -28,9 +28,10 @@
 		}
 	}
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
 	.home.docs-1 .item {
 		min-height: initial;
+		max-width: none;
 	}
 }
 .docs-1 {

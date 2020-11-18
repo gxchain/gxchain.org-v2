@@ -24,7 +24,7 @@
 				v-for="(item, i) in list" :key="i">
 				<div class="item mt-50">
 					<div class="d-flex al-c">
-						<img :src="item.icon || 'https://aoyi02.oss-cn-shanghai.aliyuncs.com/app/17/avatar.svg'">
+						<img :src="item.icon || '//gxchain.oss-cn-shanghai.aliyuncs.com/org/img/avatar.svg'">
 						<div class="ml-15 lh-15">
 							<h3 class="fz-16">{{ item.title }}</h3>
 							<p class="fz-12 gray">{{ item.lines[0] }}</p>

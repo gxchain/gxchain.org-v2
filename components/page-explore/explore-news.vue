@@ -187,7 +187,7 @@ export default {
 			noMore: false,
 			query: {},
 			skey: '',
-			defImg: '//aoyi02.oss-cn-shanghai.aliyuncs.com/gxc/news/461b0ecab7afef193011bf4288dd7d20.png',
+			defImg: '//gxchain.oss-cn-shanghai.aliyuncs.com/news/img/1.png',
 		}
 	},
 	created() {

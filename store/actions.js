@@ -15,7 +15,7 @@ export default {
 		let nodeList = data.slice(0, 21).map(it => {
 			const { url } = it.witness_info || {}
 			return {
-				logo: 'https://aoyi02.oss-cn-shanghai.aliyuncs.com/gxc/news/ic-node.svg',
+				logo: 'https://gxchain.oss-cn-shanghai.aliyuncs.com/org/img/02f61a452550efe364af0dd5c65b865b.svg',
 				name: it.account,
 				...it.extra,
 				votes: it.votes,
