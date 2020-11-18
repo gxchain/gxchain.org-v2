@@ -35,18 +35,35 @@ body {
 			<div class="pd-10"></div>
 			<h2>{{ row.title }}</h2>
 			<p class="gray fz-13 mt-10">{{ row.postAt.replace(/:00$/, '') }}</p>
-			<div class="markdown mt-50" v-html="row.content"></div>
+			<div class="markdown mt-50" v-html="row.content" v-if="row.content"></div>
+			<div class="mt-50 gray fz-15"  v-else>
+				{{downSec}}秒后跳转到
+				<a href="row.link" class="color-1">
+					<u>{{ row.link.replace(/^https?:\/\//, '').cutStr(20) }}</u>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
 </template>
 
 <script>
+String.prototype.cutStr = function(pre = 100, trail = 0) {
+	if(this.length <= pre + trail) return this
+	let txt = this.substr(0, pre) + '...'
+	if(trail) txt += this.substr(-trail)
+	return txt
+}
 export default {
 	computed: {
 		row() {
 			return this.$store.state.newsRow
 		},
+	},
+	data() {
+		return {
+			downSec: 3,
+		}
 	},
 	async fetch({ store, params, ...args }) {
 		await store.dispatch('initData', args)
@@ -54,7 +71,13 @@ export default {
 	},
 	mounted() {
 		if(!this.row.content) {
-			location.href = this.row.link
+			const timing = setInterval(() => {
+				this.downSec--
+				if(this.downSec <= 0) {
+					location.href = this.row.link
+					clearInterval(timing)
+				}
+			}, 1e3)
 		}
 	},
 }
