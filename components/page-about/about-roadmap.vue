@@ -62,7 +62,7 @@ export default {
 			lang: s => s.lang,
 		}),
 		title() {
-			if(this.lang == 'kr') return '노정'
+			if(this.lang == 'kr') return '로드맵'
 			if(this.lang == 'ch') return '历程'
 			return 'RoadMap'
 		},

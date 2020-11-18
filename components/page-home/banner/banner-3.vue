@@ -167,7 +167,7 @@ export default {
 			accountNum: s => s.accountNum,
 		}),
 		slogan() {
-			if(this.lang == 'kr') return '신뢰 데이터 의 가치 네트워크'
+			if(this.lang == 'kr') return '신뢰할 수 있는 데이터 가치 네트워크'
 			return this.isCh ? '可信数据的价值网络' : 'A Trusted Data Internet of Value'
 		},
 		moreTxt() {
@@ -176,7 +176,7 @@ export default {
 		},
 		numList() {
 			let arr = ['Total Transactions', 'Total Accounts', 'Running Duration']
-			if(this.lang == 'kr') arr = ['총 거래 수', '계좌 수', '운행 시간']
+			if(this.lang == 'kr') arr = ['총 거래 수', '계정 수', '운영 시간']
 			else if(this.isCh) arr = ['总交易数', '账户数', '运行时间']
 			return [
 				{

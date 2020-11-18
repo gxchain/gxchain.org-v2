@@ -73,10 +73,11 @@ export default {
 		return data.rows.length
 	},
 	async getWeekly({ commit, state }) {
-		const { lang } = state
+		let { lang } = state
+		if(lang != 'ch') lang = 'en'
 		const { data: { rows: sideNews } } = await this.$axios.post('/data/list/news', {
 			lang,
-			type: ['latest'],
+			type: 'latest',
 		})
 		const { data: { rows: weekRows } } = await this.$axios.post('/data/list/weekly')
 		commit('setData', {
