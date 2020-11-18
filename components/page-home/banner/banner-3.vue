@@ -114,9 +114,9 @@
 			
 			<div class="ta-c">
 				<img src="/gxchain-2.svg" class="logo">
-				<p class="slogan" :class="isCh ? 'is-ch' : ''">{{ isCh ? '可信数据的价值网络' : 'A Trusted Data Internet of Value' }}</p>
+				<p class="slogan" :class="isCh ? 'is-ch' : ''">{{ slogan }}</p>
 				<div class="more-link mt-30">
-					<a href="/about" class="d-ib">{{ isCh ? '了解更多' : 'Learn More' }}</a>
+					<a href="/about" class="d-ib">{{ moreTxt }}</a>
 				</div>
 			</div>
 			<div class="num-wrap m-auto">
@@ -161,22 +161,34 @@ export default {
 	},
 	computed: {
 		...mapState({
+			lang: s => s.lang,
 			isCh: s => s.lang == 'ch',
 			transNum: s => s.transNum,
 			accountNum: s => s.accountNum,
 		}),
+		slogan() {
+			if(this.lang == 'kr') return '신뢰 데이터 의 가치 네트워크'
+			return this.isCh ? '可信数据的价值网络' : 'A Trusted Data Internet of Value'
+		},
+		moreTxt() {
+			if(this.lang == 'kr') return '더 보기'
+			return this.isCh ? '了解更多' : 'Learn More'
+		},
 		numList() {
+			let arr = ['Total Transactions', 'Total Accounts', 'Running Duration']
+			if(this.lang == 'kr') arr = ['총 거래 수', '계좌 수', '운행 시간']
+			else if(this.isCh) arr = ['总交易数', '账户数', '运行时间']
 			return [
 				{
-					title: this.isCh ? '总交易数' : 'Total Transactions',
+					title: arr[0],
 					num: this.transNum,
 				},
 				{
-					title: this.isCh ? '账户数' : 'Total Accounts',
+					title: arr[1],
 					num: this.accountNum,
 				},
 				{
-					title: this.isCh ? '运行时间' : 'Running Duration',
+					title: arr[2],
 					num: this.dureTxt,
 				},
 			]

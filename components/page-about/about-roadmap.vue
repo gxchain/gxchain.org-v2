@@ -54,13 +54,18 @@ import { mapState } from 'vuex'
 
 export default {
 	props: {
-		title: String,
 		list: Array,
 	},
 	computed: {
 		...mapState({
 			clientWidth: s => s.clientWidth,
+			lang: s => s.lang,
 		}),
+		title() {
+			if(this.lang == 'kr') return '노정'
+			if(this.lang == 'ch') return '历程'
+			return 'RoadMap'
+		},
 		itemWidth() {
 			const w = this.$store.state.clientWidth
 			if(w > 1000) return 200

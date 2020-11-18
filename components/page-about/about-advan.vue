@@ -26,7 +26,7 @@
 <template>
 <div class="dark panel-1 about-advan">
 	<div class="wrap">
-		<h2>{{isCh ? '方案优势' : 'Adavantages'}}</h2>
+		<h2>{{ title }}</h2>
 		<el-row :gutter="5" class="mt-50">
 			<el-col :xs="12" :sm="8" :md="4" v-for="(item, i) in list" :key="i">
 				<div class="item pos-r mb-10">
@@ -51,9 +51,14 @@ export default {
 		list: Array,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
 		},
+		title() {
+			if(this.lang == 'kr') return '우세'
+			if(this.lang == 'ch') return '优势方案'
+			return 'Adavantages'
+		}
 	}
 }
 </script>

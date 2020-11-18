@@ -101,7 +101,7 @@
 	<div class="wrap">
 		<div class="ml-30-">
 			<p class="fz-30 fw-b">GXChain</p>
-			<h3 class="fz-50">{{isCh?'生态应用':'Ecosystem'}}</h3>
+			<h3 class="fz-50">{{ title }}</h3>
 			<div class="lh-15 mt-20" v-if="isCh">
 				在众多合作伙伴与项目的不断努力下，<br>
 				GXChain 生态正在快速发展壮大，<br>
@@ -151,8 +151,16 @@ export default {
 		list: Array,
 	},
 	computed: {
+		lang() {
+			return this.$store.state.lang
+		},
 		isCh() {
-			return this.$store.state.lang == 'ch'
+			return this.lang == 'ch'
+		},
+		title() {
+			if(this.lang == 'kr') return '생태계'
+			if(this.lang == 'ch') return '生态系统'
+			return 'Ecosystem'
 		},
 		appList() {
 			return this.list.map(_it => {

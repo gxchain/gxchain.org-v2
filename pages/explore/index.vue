@@ -7,7 +7,7 @@ body {
 <template>
 <div>
 	<explore-news id="news" :list="newsList" >
-		<latest-1 :title="lang == 'ch' ? '发展' : 'Latest'" :list="latestNews"></latest-1>
+		<latest-1 :title="title" :list="latestNews"></latest-1>
 	</explore-news>
 	
 </div>
@@ -19,6 +19,11 @@ import { mapState } from 'vuex'
 
 export default {
 	computed: {
+		title() {
+			if(this.lang=='kr') return '발전'
+			if(this.lang=='ch') return '发展'
+			return 'Develop'
+		},
 		...mapState({
 			lang: s => s.lang,
 			actList: s => s.weekRows.slice(0, 5),

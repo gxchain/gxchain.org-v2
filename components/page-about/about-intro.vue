@@ -19,7 +19,7 @@
 	<div class="wrap">
 		<div>
 			<p class="fw-b fz-30">GXChain</p>
-			<h3 class="fz-50">{{isCh ? '简介' : 'Intro'}}</h3>
+			<h3 class="fz-50">{{ intro }}</h3>
 		</div>
 		<div class="bg-blue-1 mt-30 d-flex al-c">
 			<el-row :gutter="60" align="middle">
@@ -52,8 +52,13 @@ export default {
 		info: Object,
 	},
 	computed: {
-		isCh() {
-			return this.$store.state.lang == 'ch'
+		lang() {
+			return this.$store.state.lang
+		},
+		intro() {
+			if(this.lang == 'kr') return '소개'
+			if(this.lang == 'ch') return '简介'
+			return 'Intro'
 		},
 	}
 }

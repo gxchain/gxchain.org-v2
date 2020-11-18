@@ -113,13 +113,15 @@
 			<el-col :xs="24" :sm="16">
 				<ul class="d-flex al-c nav bdb-1">
 					<li class="active shrink-0">
-						{{ $store.state.lang == 'ch' ? '推荐' : 'Recommend' }}
+						{{ recTxt }}
 					</li>
 					<div class="ml-auto d-flex al-c flex-1 search-wrap">
 						<span class="iconfont icon-search fz-20 fw-b pd-5"></span>
-						<input ref="kw" type="text" class="search flex-1" placeholder="搜索关键词"
+						<input ref="kw" type="text" class="search flex-1" :placeholder="lang=='ch'?'搜索关键词':'keyword'"
 							v-model="skey" @keyup.enter="onSearch">
-						<span class="btn-1 bg-1 white shrink-0 fz-12 op-touch" @click="onSearch">搜索</span>
+						<span class="btn-1 bg-1 white shrink-0 fz-12 op-touch" @click="onSearch">
+							{{ lang  == 'ch' ? '搜索' : 'Search' }}
+						</span>
 					</div>
 				</ul>
 				<div class="news-list">
@@ -143,11 +145,13 @@
 
 				<div class="mt-20" v-if="list.length" v-show="list.length >= 10 && !noMore">
 					<p class="load-more color-1 ta-c pd-10 op-touch" @click="loadMore">
-						<span class="btn-1">{{ loading ? '加载中...' : '浏览更多' }}</span>
+						<span class="btn-1" v-if="lang=='ch'">{{ loading ? '加载中...' : '浏览更多' }}</span>
+						<span class="btn-1" v-else>{{ loading ? 'Loading...' : 'More' }}</span>
 					</p>
 				</div>
 				<div class="mt-30" v-else>
-					未找到关于{{ $route.query.s }}的新闻
+					<span v-if="lang=='ch'">未找到关于{{ $route.query.s }}的新闻</span>
+					<span v-else>not found</span>
 				</div>
 				<div class="pd-15"></div>
 			</el-col>
@@ -168,6 +172,13 @@ export default {
 	computed: {
 		lastNews() {
 			return this.list[0]
+		},
+		lang() {
+			return this.$store.state.lang
+		},
+		recTxt() {
+			if(this.lang == 'kr') return '최신'
+			return this.lang  == 'ch' ? '推荐' : 'Lastest'
 		},
 	},
 	data() {
