@@ -38,7 +38,7 @@ body {
 			<div class="markdown mt-50" v-html="row.content" v-if="row.content"></div>
 			<div class="mt-50 gray fz-15"  v-else>
 				{{downSec}}秒后跳转到
-				<a href="row.link" class="color-1">
+				<a :href="row.link" class="color-1">
 					<u>{{ row.link.replace(/^https?:\/\//, '').cutStr(20) }}</u>
 				</a>
 			</div>
