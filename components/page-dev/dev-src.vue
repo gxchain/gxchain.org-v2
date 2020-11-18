@@ -1,7 +1,7 @@
 <style lang="less">
 .dev-src {
 	.wrap {
-		max-width: 800px;
+		max-width: 830px;
 	}
 	.side-img {
 		max-height: 160px;
