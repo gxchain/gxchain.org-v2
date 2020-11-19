@@ -56,7 +56,7 @@ export default {
 		},
 		title() {
 			if(this.lang == 'kr') return '우세'
-			if(this.lang == 'ch') return '优势方案'
+			if(this.lang == 'ch') return '方案优势'
 			return 'Adavantages'
 		}
 	}
