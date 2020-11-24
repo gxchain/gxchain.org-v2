@@ -37,7 +37,8 @@ body {
 			<p class="gray fz-13 mt-10">{{ row.postAt.replace(/:00$/, '') }}</p>
 			<div class="markdown mt-50" v-html="row.content" v-if="row.content"></div>
 			<div class="mt-50 gray fz-15"  v-else>
-				{{downSec}}秒后跳转到
+				<span v-if="isCh">{{downSec}}秒后跳转到</span>
+				<span v-else>redirect in {{downSec}}s</span>
 				<a :href="row.link" class="color-1">
 					<u>{{ row.link.replace(/^https?:\/\//, '').cutStr(20) }}</u>
 				</a>
@@ -58,6 +59,9 @@ export default {
 	computed: {
 		row() {
 			return this.$store.state.newsRow
+		},
+		isCh() {
+			return  this.$store.state.lang == 'ch'
 		},
 	},
 	data() {
