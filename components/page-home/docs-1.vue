@@ -89,7 +89,7 @@ export default {
 		title: String,
 		iconLink: {
 			type: String,
-			default: 'icon-link2',
+			default: 'icon-link1',
 		},
 	},
 	computed: {

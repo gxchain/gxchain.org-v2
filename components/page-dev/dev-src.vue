@@ -52,7 +52,7 @@
 					<p class="sub-title fz-13 mb-10 lh-15">{{ item.subTitle }}</p>
 					<p class="mb-10 fz-14" v-for="(row, j) in item.subs" :key="j">
 						<a :href="row.link" target="_blank">
-							<i class="iconfont" :class="/github/.test(row.link) ? 'icon-github' : 'icon-link2'"></i>
+							<i class="iconfont" :class="/github/.test(row.link) ? 'icon-github' : 'icon-link1'"></i>
 							<span>{{ row.tag }}</span>
 						</a>
 						<span class="label">{{ row.label }}</span>

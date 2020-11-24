@@ -15,7 +15,7 @@
 
 	<home-news class="bg-l3" :list="newsList"></home-news>
 
-	<docs-1 class="bg-l1 home" id="docs" :info="docInfo" icon-link="icon-link2">
+	<docs-1 class="bg-l1 home" id="docs" :info="docInfo" >
 		<title-1 :title="docInfo.title" more="更多项目" link="/developer"></title-1>
 	</docs-1>
 	
