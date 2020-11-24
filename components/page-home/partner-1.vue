@@ -43,7 +43,8 @@
 			<el-row :gutter="isPC ? 50 : 15">
 				<!-- <template v-for="(item, i) in list"></template> -->
 				<el-col :xs="6" :sm="6" :md="6" v-for="(row, j) in list" :key="j">
-					<a class="item trans-200 d-b pos-r" :href="row.link || false" rel="nofollow" target="_blank">
+					<a class="item trans-200 d-b pos-r" 
+						:href="isLink ? (row.link || false) : false" rel="nofollow" target="_blank">
 						<img :src="row.icon" class="icon pos-center" :class="row.iconCls">
 					</a>
 				</el-col>
@@ -62,6 +63,11 @@ export default {
 	computed: {
 		isPC() {
 			return this.$store.state.clientWidth > 700
+		},
+		isLink() {
+			const item = this.list[0]
+			if(item && item.link) return true
+			return false
 		},
 		list() {
 			const list = []
