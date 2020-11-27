@@ -96,7 +96,7 @@ export default {
 		const { data: { rows } } = await this.$axios.get('/data/list/nav-link')
 		rows.forEach(row => {
 			row.label = row[lang] || row.en
-			row.links = (row.links || '').split('\n').map(txt => {
+			row.links = !row.links ? [] : row.links.split('\n').map(txt => {
 				const arr = txt.split('::')
 				let link = arr[0]
 				if(/^#/.test(link) && row.href != '/') {

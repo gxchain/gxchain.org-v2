@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-wrap">
 			<div class="d-flex al-start flex-center flex-wrap nav-wrap">
-				<ul class="nav-list" v-for="(item, i) in navList" :key="i">
+				<ul class="nav-list" v-for="(item, i) in navList.filter(it => it.links.length)" :key="i">
 					<li>
 						<h3>
 							<a :href="item.href">{{ item.label }}</a>

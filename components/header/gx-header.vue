@@ -21,7 +21,9 @@
 	<ul class="d-i-flex al-c top-nav ml-auto" :class="{ show: showMenu }">
 		<li class="ml-10 fz-14 pos-r"
 			v-for="(item) in navList" :key="item.href">
-			<a :href="item.href" :class="{'color-1 fw-b': route == item.href }">{{ item.label }}</a>
+			<a :href="item.href" 
+				:target="/^http/.test(item.href) ? '_blank' : ''"
+				:class="{'color-1 fw-b': route == item.href }">{{ item.label }}</a>
 			<ul class="sub-list bg-white" v-if="item.subLinks.length">
 				<li v-for="(row, j) in item.subLinks" :key="j">
 					<a :href="row.link" :target="/^http/.test(row.link) ? '_blank' : ''"
