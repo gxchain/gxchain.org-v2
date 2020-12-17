@@ -15,14 +15,14 @@ export default [
 		icon: 'icon-weibo',
 		link: 'http://weibo.com/gongxinbao',
 	},
-	{
-		icon: 'icon-twitter',
-		link: 'https://twitter.com/gongxinbao',
-	},
-	{
-		icon: 'icon-Facebook',
-		link: 'https://www.facebook.com/GXChain/',
-	},
+	// {
+	// 	icon: 'icon-twitter',
+	// 	link: 'https://twitter.com/gongxinbao',
+	// },
+	// {
+	// 	icon: 'icon-Facebook',
+	// 	link: 'https://www.facebook.com/GXChain/',
+	// },
 	{
 		icon: 'icon-telegram',
 		popLinks: [
