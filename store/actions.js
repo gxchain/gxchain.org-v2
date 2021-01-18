@@ -1,4 +1,6 @@
 
+import introJson from '../assets/json/intro.json'
+
 export default {
 	async getNewsRow({ commit }, params) {
 		const { data } = await this.$axios.get('https://tablo.fun/api/v1/media/gxchain/news/'+params.id)
@@ -112,7 +114,14 @@ export default {
 			row.subLinks = row.links.filter(it => it.isSub)
 		})
 		const navList = rows.filter(it => it.pos == 'header' && it.href != '/')
-		// const introList = allData.filter(it => it.lang == lang && it.route == route) // 本地数据
+		const introList = introJson.filter(it => {
+			let matRoute = it.route == route
+			if(route == '/') {
+				matRoute = matRoute || it.route == '/eco'
+			}
+			return it.lang == lang && matRoute
+		}) // 本地数据
+		// console.log(introList)
 		let body = {
 			lang,
 			route,
@@ -129,7 +138,7 @@ export default {
 			delete body.route
 			body.pos = ['dev-client', 'home-src', 'home-org', 'partner']
 		}
-		const { data: { rows: introList } } = await this.$axios.post('/data/list/gxc_intro', body)
+		// const { data: { rows: introList } } = await this.$axios.post('/data/list/gxc_intro', body)
 		introList.forEach(row => {
 			row.lines = (row.lines || '').split('\n')
 		})
