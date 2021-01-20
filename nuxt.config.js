@@ -1,11 +1,11 @@
 
 export default {
-  // serverMiddleware: [
-  //   {
-  //     path: '/api',
-  //     handler: '~/api/index.js',
-  //   }
-  // ],
+  serverMiddleware: [
+    {
+      path: '/api',
+      handler: '~/api/index.js',
+    }
+  ],
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
