@@ -45,9 +45,13 @@ export default {
 	},
 	async getNews({ commit, state }, opts = {}) {
 		let { lang, newsPage, newsList } = state
+		let api = state.newsApi
 		if(opts.more) newsPage += 1
 		else if(opts.page) newsPage = opts.page
-		else newsPage = 1
+		else {
+			newsPage = 1
+			api = '/data/list/news'
+		}
 		const body = {
 			lang,
 			type: 'report',
@@ -57,7 +61,8 @@ export default {
 		if(opts.s) {
 			body.scon = `%${opts.s}%`
 		}
-		const { data } = await this.$axios.get(state.newsApi, {
+		console.log(api)
+		const { data } = await this.$axios.get(api, {
 			params: body,
 		})
 		if(opts.s) {
@@ -79,7 +84,7 @@ export default {
 	async getWeekly({ commit, state }) {
 		let { lang } = state
 		if(lang != 'ch') lang = 'en'
-		const { data: { rows: sideNews } } = await this.$axios.post(state.newsApi, {
+		const { data: { rows: sideNews } } = await this.$axios.post('/data/list/news', {
 			lang,
 			type: 'latest',
 		})

@@ -19,6 +19,7 @@ export default function({ $axios, redirect }) {
 	$axios.onError(error => {
 		const { status } = error.response || {}
 		console.log('axios err', status)
+		// console.log(error.response)
 		if (status === 400) {
 			redirect('/400')
 		}
