@@ -3,7 +3,7 @@ const axios = require('axios')
 
 app.get('/news', async (req, res) => {
 	try {
-		const { data } = await axios.get('http://localhost:1061/app/17/data/list/news', {
+		const { data } = await axios.get('http://172.19.45.147:1601/app/17/data/list/news', {
 			params: req.query,
 		})
 		res.send(data)

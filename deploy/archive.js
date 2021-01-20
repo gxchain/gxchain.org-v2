@@ -36,6 +36,7 @@ archive.pipe(output);
 archive.directory('.nuxt', true, {date: new Date()});
 archive.directory('static', {date: new Date()});
 archive.directory('deploy', {date: new Date()});
+archive.directory('api', {date: new Date()});
 archive.file('package.json', {date: new Date()});
 archive.file('package-lock.json', {date: new Date()});
 archive.file('nuxt.config.js', {date: new Date()});
