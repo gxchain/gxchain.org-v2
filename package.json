@@ -19,7 +19,8 @@
     "echarts": "^4.9.0",
     "nuxt": "^2.14.0",
     "swiper": "^6.2.0",
-    "v-charts": "^1.19.0"
+    "v-charts": "^1.19.0",
+    "x-ray": "^2.3.4"
   },
   "devDependencies": {
     "archiver": "^5.0.0",

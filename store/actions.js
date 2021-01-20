@@ -2,8 +2,8 @@
 // import introJson from '../assets/json/intro.json'
 
 export default {
-	async getNewsRow({ commit }, params) {
-		const { data } = await this.$axios.get('https://tablo.fun/api/v1/media/gxchain/news/'+params.id)
+	async getNewsRow({ commit, state }, params) {
+		const { data } = await this.$axios.get(state.newsApi + '/' + params.id)
 		commit('setData', {
 			newsRow: data,
 		})
@@ -57,7 +57,9 @@ export default {
 		if(opts.s) {
 			body.scon = `%${opts.s}%`
 		}
-		const { data } = await this.$axios.post('/data/list/news', body)
+		const { data } = await this.$axios.get(state.newsApi, {
+			params: body,
+		})
 		if(opts.s) {
 			// const reg = new RegExp(opts.s, 'g')
 			const rep = `<b class="color-1">${opts.s}</b>`
@@ -77,7 +79,7 @@ export default {
 	async getWeekly({ commit, state }) {
 		let { lang } = state
 		if(lang != 'ch') lang = 'en'
-		const { data: { rows: sideNews } } = await this.$axios.post('/data/list/news', {
+		const { data: { rows: sideNews } } = await this.$axios.post(state.newsApi, {
 			lang,
 			type: 'latest',
 		})

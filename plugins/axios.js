@@ -3,7 +3,7 @@
 // import { cacheAdapterEnhancer } from 'axios-extensions'
 
 export default function({ $axios, redirect }) {
-	$axios.setBaseURL('https://tablo.fun/app/17')
+	$axios.setBaseURL('http://172.19.45.147:1601/app/17')
 
 	// https://www.yuque.com/louwenkang/ypz71r/pflmez
 	// const lruConfig = new LRUCache({

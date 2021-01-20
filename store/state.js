@@ -6,6 +6,7 @@ export default () => {
 		lang: 'ch',
 		isDark: false,
 		isBannerBg: true,
+		newsApi: 'https://www.gxchain.org/api/news',
 		
 		nowDate: new Date(),
 		clientWidth: 0,
