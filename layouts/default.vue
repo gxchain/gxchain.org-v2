@@ -5,7 +5,7 @@
 		'dark': isDark,
 		'banner_bg': isBannerBg,
 	}, 'page'+route.replace('/', '_')]">
-	<gx-header></gx-header>
+	<gx-header v-if="!hideTop"></gx-header>
 	<div class="main">
 		<Nuxt />
 	</div>
@@ -17,6 +17,11 @@
 import { mapState } from 'vuex'
 
 export default {
+	data() {
+		return {
+			hideTop: false,
+		}
+	},
 	computed: {
 		...mapState({
 			route: s => s.route,
@@ -26,6 +31,9 @@ export default {
 		}),
 	},
 	mounted() {
+		if(this.$route.query.notop) {
+			this.hideTop = true
+		}
 		if(localStorage.isDark == 1) {
 			this.$store.commit('setData', {
 				isDark: true,

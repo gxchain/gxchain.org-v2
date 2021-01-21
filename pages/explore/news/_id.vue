@@ -29,10 +29,12 @@ body {
 <div>
 	<div class="panel-1 news-row">
 		<div class="wrap" v-if="row">
-			<a href="/explore" class="color-1 pos-r" style="top: -20px;">
-				<i class="iconfont icon-fanhui"></i> 新闻列表
-			</a>
-			<div class="pd-10"></div>
+			<template v-if="!hideTop">
+				<a href="/explore" class="color-1 pos-r" style="top: -20px;">
+					<i class="iconfont icon-fanhui"></i> 新闻列表
+				</a>
+				<div class="pd-10"></div>
+			</template>
 			<h2>{{ row.title }}</h2>
 			<p class="gray fz-13 mt-10">{{ row.postAt.replace(/:00$/, '') }}</p>
 			<div class="markdown mt-50" v-html="row.content" v-if="row.content"></div>
@@ -67,6 +69,7 @@ export default {
 	data() {
 		return {
 			downSec: 3,
+			hideTop: false,
 		}
 	},
 	async fetch({ store, params, ...args }) {
@@ -74,6 +77,9 @@ export default {
 		await store.dispatch('getNewsRow', params)
 	},
 	mounted() {
+		if(this.$route.query.notop) {
+			this.hideTop = true
+		}
 		if(!this.row.content) {
 			const timing = setInterval(() => {
 				this.downSec--

@@ -61,7 +61,6 @@ export default {
 		if(opts.s) {
 			body.scon = `%${opts.s}%`
 		}
-		console.log(api)
 		const { data } = await this.$axios.get(api, {
 			params: body,
 		})
